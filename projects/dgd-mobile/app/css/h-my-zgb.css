@@ -1,0 +1,227 @@
+.h-my-zgb-total-revenue,
+.h-my-zgb-balance,
+.h-my-zgb-detail .title {
+  padding: 0 0.4rem 0 0.32rem;
+  margin-bottom: 0.266667rem;
+  background-color: #fff;
+}
+
+#my-zgb {
+  padding-bottom: 1.413333rem;
+}
+
+.h-my-zgb-banner {
+  height: 4.826667rem;
+  color: #fefefe;
+  background-image: -webkit-linear-gradient(top, #02c2ac, #00a0ee);
+  background-image: linear-gradient(to bottom, #02c2ac, #00a0ee);
+}
+
+.h-my-zgb-banner .daily-revenue {
+  height: 3.306667rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.h-my-zgb-banner .daily-revenue h2 {
+  font-size: 0.4rem;
+}
+
+.h-my-zgb-banner .daily-revenue h1 {
+  font-size: 1.333333rem;
+}
+
+.h-my-zgb-banner .total {
+  height: 1.52rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.h-my-zgb-banner .total .columns {
+  float: left;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.h-my-zgb-banner .total .columns * {
+  line-height: 0.533333rem;
+}
+
+.h-my-zgb-banner .total .columns p {
+  font-size: 0.32rem;
+}
+
+.h-my-zgb-banner .total .columns h2 {
+  font-size: 0.4rem;
+}
+
+.h-my-zgb-total-revenue {
+  height: 1.373333rem;
+  line-height: 1.373333rem;
+  font-size: 0.4rem;
+  color: #4d4d4d;
+}
+
+.h-my-zgb-total-revenue span {
+  color: #ff7b2d;
+}
+
+.h-my-zgb-balance {
+  height: 1.986667rem;
+}
+
+.h-my-zgb-balance > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.h-my-zgb-balance > a > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.h-my-zgb-balance > a h2 {
+  font-size: 0.4rem;
+  color: #4d4d4d;
+}
+
+.h-my-zgb-balance > a p {
+  font-size: 0.346667rem;
+  color: #ff7b2d;
+}
+
+.h-my-zgb-balance > a span {
+  color: #b4b4b4;
+  font-size: 0.426667rem;
+}
+
+.h-my-zgb-detail .title {
+  height: 1.4rem;
+  line-height: 1.4rem;
+  font-size: 0.4rem;
+  color: #4d4d4d;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h-my-zgb-detail .title .show-detail {
+  display: block;
+  width: 1.573333rem;
+  height: 0.573333rem;
+  line-height: 0.573333rem;
+  text-align: center;
+  font-size: 0.32rem;
+  color: #009ff0;
+  border: 1px solid #009ff0;
+  border-radius: 0.066667rem;
+}
+
+.h-my-zgb-detail .list dt,
+.h-my-zgb-detail .list dd {
+  font-size: 0.32rem;
+  overflow: hidden;
+}
+
+.h-my-zgb-detail .list dt > *,
+.h-my-zgb-detail .list dd > * {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+
+.h-my-zgb-detail .list dt {
+  height: 0.786667rem;
+  line-height: 0.786667rem;
+  background-color: #eaeaea;
+  color: #4d4d4d;
+}
+
+.h-my-zgb-detail .list dd {
+  color: #898989;
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #fff;
+}
+
+.h-my-zgb-detail .list dd:last-child {
+  text-align: center;
+  height: 1.706667rem;
+  line-height: 1.706667rem;
+  font-size: 0.32rem;
+  color: #4d4d4d;
+}
+
+.h-my-zgb-detail .list dd:last-child * {
+  display: block;
+  width: 100%;
+}
+
+.h-my-zgb-button {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.413333rem;
+  line-height: 1.413333rem;
+  text-align: center;
+  font-size: 0.426667rem;
+  overflow: hidden;
+  box-shadow: 0 -0.013333rem 0.066667rem 0 rgba(0, 0, 0, 0.33);
+}
+
+.h-my-zgb-button > a {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.h-my-zgb-button > a:first-child {
+  color: #fff;
+  background-color: #009ff0;
+}
+
+.h-my-zgb-button > a:last-child {
+  background-color: #fff;
+  color: #009ff0;
+}

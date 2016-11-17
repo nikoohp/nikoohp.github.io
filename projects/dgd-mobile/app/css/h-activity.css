@@ -1,0 +1,27 @@
+.h-activity {
+  padding: 0 0.293333rem;
+}
+
+.h-activity .title {
+  font-size: 0.4rem;
+  color: #3d4245;
+  margin: 0.48rem 0 0.24rem;
+  overflow: hidden;
+}
+
+.h-activity .title > span {
+  width: 50%;
+  display: block;
+  float: left;
+  text-indent: 0.133333rem;
+}
+
+.h-activity .title .icon {
+  color: #b2b9bf;
+  margin-right: 0.133333rem;
+}
+
+.h-activity img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,141 @@
+// project-intro
+.h-project-intro{
+  background-color: #fff;
+  margin: 0.266667rem 0;
+  padding: 0.266667rem 0.293333rem 0.266667rem 0.4rem;
+  overflow: hidden;
+  .project-img{
+    float: left;
+    width: 1.306667rem;
+    img{
+      width: 1.053333rem;
+      height: 1.053333rem;
+      border-radius: 50%;
+    }
+  }
+  .right-fix{
+    width: 100%;
+    float: right;
+    margin-left: -1.306667rem;
+  }
+  .project-info{
+    margin-left: 1.306667rem;
+    .project-name{
+      font-size: 30px;
+      color: #282828;
+      margin-bottom: 0.32rem;
+    }
+    p{
+      font-size: 24px;
+      color: #767676;
+      line-height: 17px;/*no*/
+    }
+  }
+}
+
+
+
+
+@mixin radio-btn($default-color: #BFBFBF, $checked-color: #009ff0) {
+  input.checked{
+    opacity: 0;
+    + i.icon{
+      color: $default-color;
+      transition: color .2s;
+    }
+    &:checked + i.icon{
+      color: $checked-color;
+    }
+  }
+}
+// invest-options
+.h-invest-options{
+  padding: 0.56rem 1.133333rem 0.293333rem;
+  background-color: #fff;
+  .invest-count{
+    height: 1.306667rem;
+    border: 2px solid #009ff0;/*no*/
+    color: #616a73;
+    border-radius: 0.106667rem;
+    box-shadow: 0 0.066667rem 0.066667rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    > div{
+      float: left;
+      height: 100%;
+      line-height: 1.306667rem;
+    }
+    .txt{
+      font-size: 30px;
+      margin-right: 1.066667rem;
+      text-indent: 0.266667rem;
+    }
+    .btn{
+      padding-top: 0.266667rem;
+      overflow: hidden;
+      > span{
+        float: left;
+        height: 0.72rem;
+        line-height: 0.72rem;
+      }
+      .sub, .plus{
+        width: 0.72rem;
+        text-align: center;
+        color: #fff;
+        background-color: #b2b9bf;
+        border-radius: 0.08rem;
+      }
+      .num{
+        width: 2.733333rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 56px;
+      }
+    }
+  }
+  .invest-total{
+    font-size: 30px;
+    color: #009ff0;
+    margin: 0.4rem 0;
+    overflow: hidden;
+    .columns{
+      float: left;
+      width: 50%;
+      &:first-child{
+        text-align: right;
+      }
+    }
+  }
+  .pay-list{
+    width: 255px;/*no*/
+    margin: 0 auto;
+    li{
+      font-size: 28px;
+      color: #616a73;
+      margin-bottom: 0.293333rem;
+      white-space: nowrap;
+      @include radio-btn;
+    }
+  }
+}
+
+
+// submit
+.h-submit{
+  padding: 0.4rem 0;
+  font-size: 28px;
+  color: #7c7c7c;
+  white-space: nowrap;
+  text-align: center;
+  a{
+    color: #009ff0;
+  }
+  @include radio-btn;
+  input.checked:checked ~ .h-sure-button{
+    background-color: #009ff0;
+  }
+  .h-sure-button{
+    color: #fff;
+    background-color: #BFBFBF;
+    transition: .2s;
+  }
+}

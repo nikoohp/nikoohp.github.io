@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/h-login.css">
+  <title>找回密码</title>
+</head>
+<body>
+<div id='retrieve'>
+<!-- header -->
+<header>
+  <a href="javascript:history.go(-1)" class='back'><i class='icon icon-back'></i></a>
+  <h1>找回密码</h1>
+  <a href="###" class='menu'><i class='icon icon-menu'></i></a>
+</header>
+<!-- main -->
+<main>
+  <section class="h-register">
+    <form>
+    <ul>
+      <li><div class="cols1">手机号 : </div><div class="cols2"><input type="text" placeholder="请输入您的手机号"></div></li>
+      <li><div class="cols1">图形验证码 : </div><div class="cols2"><input type="text" placeholder="输入验证码"><img src="images/h-verify.png" alt="" class="verify"></div></li>
+      <li><div class="cols1">手机验证码 : </div><div class="cols2"><input type="text" placeholder="输入手机验证码"><em class="verify" :class='{sending: off}' @click='countdown' v-cloak>{{msg}}</em></div></li>
+      <li style='display: none;'></li>  <!-- 别删，为了适配li:last-child样式 -->
+    </ul>
+
+    </form>
+    <a href="#" class="h-sure-button">下一步</a>
+  </section>
+</main>
+</div>
+<script src="//cdn.bootcss.com/vue/2.0.5/vue.min.js"></script>
+<script>
+new Vue({
+  el: '#retrieve',
+  data: {
+    msg: '获取验证码',
+    off: false
+  },
+  methods: {
+    // 发送验证码
+    countdown: function () {
+      var _this = this
+      var timer = null
+      var time = 120
+      this.msg = '重新获取 (' + time + ')'
+      this.off = true
+      timer = setInterval(function () {
+        time--
+        if (time <= 0) {
+          clearInterval(timer)
+          _this.off = false
+          _this.msg = '重新获取'
+          return
+        }
+        _this.msg = '重新获取 (' + time + ')'
+      }, 1000)
+    }
+  }
+})
+</script>
+</body>
+</html>

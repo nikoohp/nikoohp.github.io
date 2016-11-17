@@ -1,0 +1,66 @@
+.h-order{
+  margin-top: 0.266667rem;
+  background-color: #fff;
+  font-size: 26px;
+  dt{
+    height: 0.96rem;
+    line-height: 0.96rem;
+    text-indent: 0.24rem;
+    font-size: 30px;
+    color: #626973;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;/*no*/
+  }
+  dd{
+    height: 0.64rem;
+    line-height: 0.64rem;
+    > span{
+      display: inline-block;
+      &.field{
+        width: 2.0rem;
+        text-align: right;
+        color: #a5a5a5;
+        margin-right: 0.16rem;
+      }
+      &.text{
+        color: #616a73;
+        &.youhui{
+          color: #e60012;
+        }
+      }
+    }
+    .select{
+      float: right;
+      color: #00a1ef;
+      margin-right: 0.728477rem;
+    }
+    &:last-child{
+      height: 0.826667rem;
+      line-height: 0.826667rem;
+      border-top: 1px solid #eee;/*no*/
+    }
+  }
+}
+
+.h-paylist{
+  margin-top: 0.4rem;
+  text-indent: 0.4rem;
+  background-color: #fff;
+  dt{
+    height: 0.96rem;
+    line-height: 0.96rem;
+    font-size: 30px;
+    color: #616b75;
+    font-weight: bold;
+  }
+  dd{
+    height: 1.0rem;
+    line-height: 1.0rem;
+    color: #616a73;
+    text-align: center;
+    border-top: 1px solid #ededed;/*no*/
+    > a{
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.h-activity{
+  padding: 0 22px;
+  .title{
+    font-size: 30px;
+    color: #3d4245;
+    margin: 36px 0 18px;
+    overflow: hidden;
+    > span{
+      width: 50%;
+      display: block;
+      float: left;
+      text-indent: 10px;
+    }
+    .icon{
+      color: #b2b9bf;
+      margin-right: 10px;
+    }
+  }
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}

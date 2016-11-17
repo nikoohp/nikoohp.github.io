@@ -1,0 +1,152 @@
+header{
+  background-color: #3e85ff;
+  color: #fff;
+}
+// 我的消息
+.h-messages-list{
+  .item{
+    padding: 0 31px 34px;
+    background-color: #fff;
+    margin-bottom: 1px;/*no*/
+    .head{
+      padding: 24px 0;
+      overflow: hidden;
+      img{
+        width: 110px;
+        height: 110px;
+        margin-right: 44px;
+        border-radius: 50%;
+      }
+      img, h2{
+        float: left;
+      }
+      h2, span{
+        height: 100%;
+        line-height: 110px;
+      }
+      h2{
+        font-size: 34px;
+        color: #616a73;
+      }
+      span{
+        float: right;
+        font-size: 30px;
+        color: #b2b9bf;
+      }
+    }
+    p{
+      height: 50px;
+      line-height: 50px;
+      font-size: 34px;
+      color: #616a73;
+      text-indent: 18px;
+      overflow:hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
+// 回复消息
+#reply{
+  padding-bottom: 108px;
+  transform: scale(1);
+  .reply-box{
+    margin: 36px 36px 50px 36px;
+    overflow: hidden;
+    .content{
+      position: relative;
+      font-size: 30px;
+      line-height: 40px;
+      padding: 34px 38px;
+      background-color: #7ecef4;
+      border: 1px solid #d7dde3;/*no*/
+      border-radius: 14px;
+      &::before,
+      &::after{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-bottom: none;
+      }
+      &::before{
+        right: 20px;
+        bottom: -20px;
+        border-top: 20px solid #d7dde3;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+      }
+      &::after{
+        right: 20px;
+        bottom: -18px;
+        border-top: 20px solid #7ecef4;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+      }
+    }
+    .avatar{
+      float: right;
+      width: 68px;
+      height: 68px;
+      margin-top: 30px;
+      margin-right: 10px;
+      overflow: hidden;
+      border-radius: 50%;
+      img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    // 来访消息框
+    &.guest{
+      .content{
+        background-color: #fff;
+        border-color: #d7dde3;
+        &::before{
+          left: 30px;
+          border-top-color: #d7dde3;
+        }
+        &::after{
+          left: 30px;
+          border-top-color: #fff;
+        }
+      }
+      .avatar{
+        float: left;
+        margin-left: 20px;
+      }
+    }
+  }
+
+}
+.h-message{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 108px;
+  padding: 0 36px;
+  background-color: #fff;
+  border-top: 1px solid #d2d9e0;/*no*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span{
+    color: #aeb8c1;
+    font-size: 35px;
+  }
+  input{
+    // width: 560px;
+    height: 100%;
+    border: none;
+    font-size: 35px;
+    color: #b2b9bf;
+  }
+  .send{
+    font-size: 42px;
+    color: #5d6b74;
+  }
+}

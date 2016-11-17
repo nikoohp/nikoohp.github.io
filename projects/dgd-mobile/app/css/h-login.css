@@ -1,0 +1,115 @@
+.h-login {
+  padding: 0.666667rem 1.093333rem;
+}
+
+.h-login form {
+  color: #b2b9bf;
+  font-size: 0.4rem;
+}
+
+.h-login form input:not([type=checkbox]) {
+  width: 100%;
+  height: 1.12rem;
+  border: 1px solid #b2b9bf;
+  font-size: 0.44rem;
+  color: #b2b9bf;
+  text-indent: 0.466667rem;
+  margin-bottom: 0.6rem;
+  border-radius: 0.106667rem;
+}
+
+.h-login form .forgot {
+  float: right;
+}
+
+.h-login .h-sure-button {
+  font-size: 0.506667rem;
+}
+
+.h-login .h-sure-button.register {
+  background-color: #fff;
+  border-color: #cdd2d6;
+  color: #cdd2d6;
+}
+
+.h-register {
+  padding-top: 0.533333rem;
+}
+
+.h-register li {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  margin-bottom: 0.4rem;
+  overflow: hidden;
+}
+
+.h-register li .cols1 {
+  float: left;
+  width: 3.253333rem;
+  text-align: right;
+  font-size: 0.44rem;
+  color: #606d75;
+}
+
+.h-register li .cols1 .required {
+  display: inline-block;
+  line-height: 0.8rem;
+  color: #e60012;
+  margin-right: 0.133333rem;
+}
+
+.h-register li .cols2 {
+  position: relative;
+  float: right;
+  width: 6.493333rem;
+  color: #b2b9bf;
+  font-size: 0.4rem;
+}
+
+.h-register li .cols2 input {
+  width: 5.693333rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-indent: 0.186667rem;
+  border: 1px solid #b2b9bf;
+}
+
+.h-register li .cols2 .verify {
+  position: absolute;
+  right: 0.933333rem;
+  color: #f19149;
+  font-size: 0.373333rem;
+}
+
+.h-register li .cols2 .verify.sending {
+  color: #bdbdbd;
+}
+
+.h-register li .cols2 img.verify {
+  height: 0.533333rem;
+  top: 50%;
+  margin-top: -0.266667rem;
+}
+
+.h-register li:last-child {
+  font-size: 0.36rem;
+  text-align: center;
+}
+
+.h-register li:last-child input {
+  opacity: 0;
+}
+
+.h-register li:last-child input:checked + .icon {
+  color: #009ff0;
+}
+
+.h-register li:last-child .icon {
+  color: #b2b9bf;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.h-register li:last-child a {
+  color: #009ff0;
+}

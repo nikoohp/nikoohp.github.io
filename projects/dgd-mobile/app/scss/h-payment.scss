@@ -1,0 +1,92 @@
+
+// 白条支付
+.h-loan-info{
+  margin-top: 20px;
+  background-color: #fff;
+  dt{
+    height: 73px;
+    line-height: 73px;
+    font-size: 30px;
+    color: #616a73;
+    font-weight: bold;
+    padding: 0 24px;
+    border-bottom: 1px solid #eaeaea;/*no*/
+  }
+  dd{
+    height: 66px;
+    line-height: 66px;
+    font-size: 26px;
+    padding: 0 24px;
+    span{
+      color: #a5a5a5;
+    }
+    em{
+      color: #616a73;
+    }
+    select{
+      border-color: #cbd0d5;
+      color: #cbd0d5;
+      background-color: #fff;
+    }
+  }
+}
+
+
+// 站岗宝支付、余额支付
+.h-zgb-buy{
+  .banner {
+    height: 277px;
+    > img{
+      left: -30px;
+      width: 200px;
+      height: 200px;
+    }
+    .info{
+      padding-left: 0;
+      text-align: center;
+      h1{
+        font-size: 80px;
+      }
+      h2{
+        font-size: 33px;
+        color: #f0eff5;
+      }
+    }
+  }
+  .buy{
+    justify-content: flex-start;
+    *{
+      display: block;
+    }
+  }
+}
+
+
+// 线下支付
+.h-underline-payment{
+  padding: 0 52px;
+  background-color: #f0eff5;
+  dt{
+    text-align: center;
+    color: #3e85ff;
+    font-size: 35px;
+    margin: 36px 0;
+  }
+  dd{
+    font-size: 30px;
+    color: #616a73;
+    margin-bottom: 50px;
+    &.notice{
+      color: #e60012;
+    }
+  }
+  .qrcode{
+    text-align: center;
+    font-size: 30px;
+    color: #616a73;
+    img{
+      width: 204px;
+      height: 204px;
+    }
+  }
+}

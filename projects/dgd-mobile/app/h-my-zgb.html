@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/h-my-zgb.css">
+  <title>我的站岗宝</title>
+</head>
+<body>
+  <div id="my-zgb" v-cloak>
+    <!-- header -->
+    <header>
+     <a href="javascript:history.go(-1)" class='back'>
+       <i class='icon icon-back'></i>
+     </a>
+     <h1>我的站岗宝</h1>
+     <a href="###" class='menu'>
+       <i class='icon icon-menu'></i>
+     </a>
+    </header>
+    <main>
+      <!-- 收益 -->
+      <section class="h-my-zgb-banner">
+        <div class="daily-revenue">
+          <h2>昨日收益（元）</h2>
+          <h1>{{items.dailyRevenue}}</h1>
+        </div>
+        <div class="total">
+          <div class="columns">
+            <p>站岗宝总额（元）</p>
+            <h2>{{items.totalAmount}}</h2>
+          </div>
+          <div class="columns">
+            <p>冻结金额（元）</p>
+            <h2>{{items.blockedAmount}}</h2>
+          </div>
+        </div>
+      </section>
+      <!-- 总收益 -->
+      <section class="h-my-zgb-total-revenue">
+        <em>累计收益（元）：</em><span>{{items.totalRevenue}}</span>
+      </section>
+      <!-- 余额自动转入 -->
+      <section class="h-my-zgb-balance">
+        <a href="#">
+          <div>
+            <h2>余额自动转入</h2>
+            <p>超出0元的金额将于每日上午10点转入到站岗宝。</p>
+          </div>
+          <span><i class="icon icon-next"></i></span>
+        </a>
+      </section>
+      <!-- 明细 -->
+      <section class="h-my-zgb-detail">
+        <div class="title"><span>站岗宝明细</span><a href="javascript:;" class='show-detail'>展开明细</a></div>
+        <dl class='list'>
+          <dt>
+            <span class="date">日期</span>
+            <span class="amount">交易金额（元）</span>
+            <span class="type">类型</span>
+            <span class="balance">站岗宝余额（元）</span>
+          </dt>
+          <dd v-for='item in items.detail'>
+            <span>{{item.title}}</span>
+            <span>{{item.visit_count}}</span>
+            <span>{{item.tab}}</span>
+            <span>{{item.reply_count}}</span>
+          </dd>
+          <dd><a href="javascript:;" @click='getMoreData'>加载更多数据</a></dd>
+        </dl>
+      </section>
+    </main>
+  </div>
+  <!-- 加载进度提示 -->
+  <transition name='fade'>
+  <!-- <div class="h-modal-mask">
+
+  </div> -->
+  </transition>
+  <!-- 转入转出按钮 -->
+  <footer class="h-my-zgb-button">
+    <a href="#">转出</a>
+    <a href="#">转入</a>
+  </footer>
+  <script src="//cdn.bootcss.com/vue/2.0.5/vue.min.js"></script>
+  <script src="./js/ajax.js"></script>
+  <script>
+    var data = {
+        dailyRevenue: '4.25',
+        totalRevenue: '3567.25',
+        totalAmount: '35624.12',
+        blockedAmount: '35624.12',
+        detail: [
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+        ]
+      }
+    // 加载更多数据
+    var moreData = [
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+          {date: '2016-08-17',amount: '6001.11',type: '转出',balance: '0.00'},
+        ]
+
+    new Vue({
+      el: '#my-zgb',
+      data: {
+        items: data,
+        limit: 3
+      },
+      methods: {
+        getMoreData: function () {
+          var moreData = [], oldLimit = this.limit
+          this.limit += 3
+
+          ajax({
+            "method" : "get",
+            "url" : "https://cnodejs.org/api/v1/topics?limit="+this.limit,
+            "success" : function(response){
+              response = JSON.parse(response)
+              moreData = response.data.slice(oldLimit)
+              console.log(response.data)
+              console.log(moreData)
+              data.detail = data.detail.concat(moreData)
+            },
+            "Error" : function(text){
+              console.log(text);
+            },
+            "async" : true
+          });
+
+          this.items.detail = this.items.detail.concat(moreData)
+        }
+      },
+      mounted: function () {
+        ajax({
+          "method" : "get",
+          "url" : "https://cnodejs.org/api/v1/topics?limit=3",
+          "success" : function(response){
+            response = JSON.parse(response)
+            data.detail = response.data
+          },
+          "Error" : function(text){
+            console.log(text);
+          },
+          "async" : true
+        });
+      }
+    })
+  </script>
+</body>
+</html>

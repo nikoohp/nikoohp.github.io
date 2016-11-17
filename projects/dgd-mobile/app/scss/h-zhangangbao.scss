@@ -1,0 +1,188 @@
+.h-banner{
+  position: relative;
+  width: 100%;
+  height: 17.8rem;
+  background-image: linear-gradient(125deg, #6c328b, #1698ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/h-zgb-banner-bg3.png);
+    opacity: .1;
+  }
+  .box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/h-zgb-banner-bg.png);
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+  .logo{
+    margin-top: 160px;
+    h1{
+      font-size: 100px;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+    }
+    .line{
+      width: 203px;
+      height: 1px;/*no*/
+      background-color: rgba(255, 255, 255, .5);
+      margin: 0 auto 16px;
+    }
+    h3{
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      opacity: .5;
+    }
+  }
+  .intro{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    li{
+      position: absolute;
+      color: rgba(255, 255, 255, .5);
+      font-size: 21px;
+      font-weight: bold;
+      opacity: .5;
+      transform-origin: 0 center;
+      &:nth-of-type(1){
+        left: 24px;
+        top: 359px;
+        transform: rotate(90deg);
+      }
+      &:nth-of-type(2){
+        left: 50px;
+        top: 420px;
+        transform: rotate(90deg);
+      }
+      &:nth-of-type(3){
+        right: 44px;
+        top: 108px;
+        transform: translateX(100%) rotate(90deg);
+      }
+      &:nth-of-type(4){
+        right: 22px;
+        top: 28px;
+        transform: translateX(100%) rotate(90deg);
+      }
+    }
+  }
+  .content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    .info{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      color: #fff;
+      h3{
+        font-size: 36px;
+      }
+      h1{
+        font-size: 120px;
+        span{
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .button{
+    position: absolute;
+    left: 50%;
+    bottom: 170px;
+    width: 306px;
+    height: 103px;
+    line-height: 103px;
+    text-align: center;
+    color: #fff;
+    font-size: 37px;
+    border: 1px solid rgba(255, 255, 255, .5);/*no*/
+    border-radius: 12px;
+    transform: translate3d(-50%, 0, 0);
+    &::after{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      content: '';
+      width: 290px;
+      height: 88px;
+      border: 1px solid rgba(255, 255, 255, .5);/*no*/
+      border-radius: 12px;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+
+}
+
+
+.h-zhangangbao{
+  padding: 68px 126px;
+  text-align: center;
+  color: #616a73;
+  font-size: 36px;
+  background-color: #fff;
+  overflow: hidden;
+  .item{
+    padding-bottom: 48px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ced2d7;/*no*/
+    &:last-child{
+      border-bottom-color: transparent;
+    }
+    .title{
+      margin-bottom: 30px;
+    }
+    .logo{
+      margin-bottom: 36px;
+      .line{
+        display: block;
+        width: 40px;
+        height: 2px;/*no*/
+        background-color: #3330bf;
+        margin: 0 auto 38px;
+      }
+      h1{
+        color: #000;
+        font-size: 70px;
+        span{
+          font-size: 30px;
+          color: #616a73;
+        }
+      }
+      img{
+        width: 94px;
+        height: 94%;
+      }
+    }
+    p{
+      line-height: 49px;
+    }
+  }
+
+
+  .login-btn{
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 36px;
+    color: #3e85ff;
+  }
+}

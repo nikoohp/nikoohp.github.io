@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/l-mycenter.css">
+  <title>安全中心</title>
+</head>
+<body>
+ <!-- header -->
+ <header>
+   <a href="javascript:history.go(-1)" class='back'>
+     <i class='icon icon-back'></i>
+   </a>
+   <h1>大股东</h1>
+   <a href="###" class='menu'>
+     <i class='icon icon-menu'></i>
+   </a>
+ </header>
+  <section class="l-safe">
+    <ul class="l-safe-list" id="l-safe-list">
+
+      <li v-for="i in items">
+
+      <a v-bind:href="i.url" v-if="i.tag">
+        <span class="item"><i class="icon icon-radio"></i>{{i.title}}</span>
+        <span class="item">
+          <span class="l-status">{{i.status[1]}}</span>
+          <i class="icon icon-next"></i>
+        </span>
+        </a>
+
+        <a v-bind:href="i.url" v-else>
+        <span class="item"><i class="icon icon-error"></i>{{i.title}}</span>
+        <span class="item">
+          <span class="l-status">{{i.status[1]}}</span>
+          <i class="icon icon-next"></i>
+        </span>
+        </a>
+
+      </li>
+
+    </ul>
+  </section>
+
+
+
+  <script src="//cdn.bootcss.com/vue/2.0.5/vue.min.js"></script>
+
+   <script>
+     var data = [{
+       title: "实名认证",
+       status:['已认证','未认证'],
+       // tag: "已认证",
+       tag: true,
+       url: "#",
+     }, {
+       title: "银行卡",
+       status:['已绑定','未绑定'],
+       // tag: "未绑定",
+       tag: false,
+       url: "#"
+     }, {
+       title: "登录密码",
+       status:['去修改','去修改'],
+       // tag: "去修改",
+       tag: true,
+       url: "#"
+     }, {
+       title: "交易密码",
+       status:['已设置','未设置'],
+       // tag: "未设置",
+       tag: false,
+       url: "#"
+     }]
+
+     new Vue({
+       el:'#l-safe-list',
+       data:{
+         items:data
+       }
+     })
+   </script>
+  </body>
+</html>

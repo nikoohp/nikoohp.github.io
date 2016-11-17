@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+  <link href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/h-app.css">
+  <title>大股东 - 投资项目</title>
+</head>
+<body>
+  <!-- header -->
+ <header>
+   <a href="javascript:history.go(-1)" class='back'>
+     <i class='icon icon-back'></i>
+   </a>
+   <h1>投资项目</h1>
+   <a href="###" class='menu'>
+     <i class='icon icon-menu'></i>
+   </a>
+ </header>
+
+ <!-- main -->
+ <main id='list' v-cloak>
+    <section class="h-item" v-for='item in items'>
+      <div class="h-item-title">
+        <span class='tag' :class="item.tag == '融资中' ? 'tag-finance' : (item.tag == '预热中' ? 'tag-preheat' : 'tag-finished')">{{item.tag}}</span>
+        <h2>{{item.title}}</h2>
+        <a href="javascript:;" class='follow' v-if='!item.follow' @click='item.follow = true'>关注</a>
+        <a href="javascript:;" class='followed' v-else='item.follow'>已关注</a>
+      </div>
+      <a href="./h-desc.html">
+        <div class="h-item-body">
+          <div class="item-pic"><img :src='item.img' alt=""></div>
+          <div class="item-info">
+            <p>{{item.desc}}</p>
+            <p>{{item.desc2}}</p>
+            <div class="progress" data-progress='0'>
+              <i :style="{width: Math.round(item.already / item.target * 100) + 'px'}"></i>
+              <span :style="{color: Math.round(item.already / item.target * 100) == 0 ? '#02c3ab':''}">{{Math.round(item.already / item.target * 100)}}%</span>
+            </div>
+            <ul class="footer">
+              <li>目标额: <span class='target'>{{item.target}}万</span></li>
+              <li>已募: <span class='already'>{{item.already}}万</span></li>
+            </ul>
+          </div>
+        </div>
+      </a>
+    </section>
+ </main>
+
+<script src="//cdn.bootcss.com/vue/2.0.5/vue.min.js"></script>
+<script>
+var datas = [
+    {
+      'tag': '预热中',
+      'title': '《网球少女》校园网络剧',
+      'img': './images/item01.png',
+      'desc': '励志轻喜校园网络剧',
+      'desc2': '预计2017年3月前上映',
+      'target': '300',
+      'already': '315',
+      'follow': false
+    },{
+      'tag': '融资中',
+      'title': '《逆行未来》网络大电影',
+      'img': './images/item01.png',
+      'desc': '"奇迹重生，穿越过去改变未来"',
+      'desc2': '2016年中国网络大电影',
+      'target': '300',
+      'already': '345',
+      'follow': true
+    },{
+      'tag': '已完成',
+      'title': '《网球少女》校园网络剧',
+      'img': './images/item01.png',
+      'desc': '励志轻喜校园网络剧',
+      'desc2': '预计2017年3月前上映',
+      'target': '600',
+      'already': '315',
+      'follow': true
+    },{
+      'tag': '预热中',
+      'title': '《网球少女》校园网络剧',
+      'img': './images/item01.png',
+      'desc': '励志轻喜校园网络剧',
+      'desc2': '预计2017年3月前上映',
+      'target': '300',
+      'already': '1',
+      'follow': false
+    }
+];
+
+new Vue({
+  el: '#list',
+  data: {
+    items: datas
+  }
+});
+</script>
+</body>
+</html>

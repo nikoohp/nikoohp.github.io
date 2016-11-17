@@ -1,0 +1,171 @@
+.h-project-intro {
+  background-color: #fff;
+  margin: 0.266667rem 0;
+  padding: 0.266667rem 0.293333rem 0.266667rem 0.4rem;
+  overflow: hidden;
+}
+
+.h-project-intro .project-img {
+  float: left;
+  width: 1.306667rem;
+}
+
+.h-project-intro .project-img img {
+  width: 1.053333rem;
+  height: 1.053333rem;
+  border-radius: 50%;
+}
+
+.h-project-intro .right-fix {
+  width: 100%;
+  float: right;
+  margin-left: -1.306667rem;
+}
+
+.h-project-intro .project-info {
+  margin-left: 1.306667rem;
+}
+
+.h-project-intro .project-info .project-name {
+  font-size: 0.4rem;
+  color: #282828;
+  margin-bottom: 0.32rem;
+}
+
+.h-project-intro .project-info p {
+  font-size: 0.32rem;
+  color: #767676;
+  line-height: 17px;
+}
+
+.h-invest-options {
+  padding: 0.56rem 1.133333rem 0.293333rem;
+  background-color: #fff;
+}
+
+.h-invest-options .invest-count {
+  height: 1.306667rem;
+  border: 2px solid #009ff0;
+  color: #616a73;
+  border-radius: 0.106667rem;
+  box-shadow: 0 0.06667rem 0.06667rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.h-invest-options .invest-count > div {
+  float: left;
+  height: 100%;
+  line-height: 1.306667rem;
+}
+
+.h-invest-options .invest-count .txt {
+  font-size: 0.4rem;
+  margin-right: 1.066667rem;
+  text-indent: 0.266667rem;
+}
+
+.h-invest-options .invest-count .btn {
+  padding-top: 0.266667rem;
+  overflow: hidden;
+}
+
+.h-invest-options .invest-count .btn > span {
+  float: left;
+  height: 0.72rem;
+  line-height: 0.72rem;
+}
+
+.h-invest-options .invest-count .btn .sub,
+.h-invest-options .invest-count .btn .plus {
+  width: 0.72rem;
+  text-align: center;
+  color: #fff;
+  background-color: #b2b9bf;
+  border-radius: 0.08rem;
+}
+
+.h-invest-options .invest-count .btn .num {
+  width: 2.733333rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.746667rem;
+}
+
+.h-invest-options .invest-total {
+  font-size: 0.4rem;
+  color: #009ff0;
+  margin: 0.4rem 0;
+  overflow: hidden;
+}
+
+.h-invest-options .invest-total .columns {
+  float: left;
+  width: 50%;
+}
+
+.h-invest-options .invest-total .columns:first-child {
+  text-align: right;
+}
+
+.h-invest-options .pay-list {
+  width: 255px;
+  margin: 0 auto;
+}
+
+.h-invest-options .pay-list li {
+  font-size: 0.373333rem;
+  color: #616a73;
+  margin-bottom: 0.293333rem;
+  white-space: nowrap;
+}
+
+.h-invest-options .pay-list li input.checked {
+  opacity: 0;
+}
+
+.h-invest-options .pay-list li input.checked + i.icon {
+  color: #BFBFBF;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.h-invest-options .pay-list li input.checked:checked + i.icon {
+  color: #009ff0;
+}
+
+.h-submit {
+  padding: 0.4rem 0;
+  font-size: 0.373333rem;
+  color: #7c7c7c;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.h-submit a {
+  color: #009ff0;
+}
+
+.h-submit input.checked {
+  opacity: 0;
+}
+
+.h-submit input.checked + i.icon {
+  color: #BFBFBF;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.h-submit input.checked:checked + i.icon {
+  color: #009ff0;
+}
+
+.h-submit input.checked:checked ~ .h-sure-button {
+  background-color: #009ff0;
+}
+
+.h-submit .h-sure-button {
+  color: #fff;
+  background-color: #BFBFBF;
+  -webkit-transition: .2s;
+  transition: .2s;
+}

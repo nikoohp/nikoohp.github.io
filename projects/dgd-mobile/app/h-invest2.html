@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/h-invest2.css">
+  <title>大股东 - 项目认购</title>
+</head>
+<body>
+<div id='invest2' v-cloak>
+  <!-- header -->
+ <header>
+   <a href="javascript:history.go(-1)" class='back'>
+     <i class='icon icon-back'></i>
+   </a>
+   <h1>项目认购</h1>
+   <a href="###" class='menu'>
+     <i class='icon icon-menu'></i>
+   </a>
+ </header>
+
+<!-- main -->
+<main>
+  <dl class='h-order'>
+    <dt>订单信息</dt>
+    <dd><span class="field">项目名称 :</span><span class="text">{{order.name}}</span></dd>
+    <dd><span class="field">项目编号 :</span><span class="text">{{order.sn}}</span></dd>
+    <dd><span class="field">认购金额 :</span><span class="text">{{order.amount}}元</span></dd>
+    <dd><span class="field">管理费 :</span><span class="text">{{order.management}}元</span></dd>
+    <dd><span class="field">优惠券 :</span><span class="text youhui">-{{order.youhui}}元</span><!--  <a href="#" class='select'>选择>></a> --></dd>
+    <dd><span class="field">合计金额 :</span><span class="text">{{ (order.amount*1 + order.management*1 - order.youhui*1).toFixed(2) }}元</span></dd>
+  </dl>
+  <dl class="h-paylist">
+    <dt>支付方式</dt>
+    <dd><a href='./h-payment-balance.html'><span>余额支付</span></a></dd>
+    <dd><a href='#'><span>在线支付</span></a></dd>
+    <dd><a href='./h-payment-underline.html'><span>线下支付</span></a></dd>
+    <dd><a href='./h-payment-baitiao.html'><span>白条支付</span></a></dd>
+    <dd><a href='./h-payment-zgb.html'><span>站岗宝支付</span></a></dd>
+  </dl>
+</main>
+</div>
+<script src="//cdn.bootcss.com/vue/2.0.5/vue.min.js"></script>
+<script>
+  new Vue({
+    el: '#invest2',
+    data: {
+      num: 1,
+      defaultTotal: 10000,
+      total: 10000,
+      pick: false,
+      pwd: false,
+      order: {
+        name: '《人偶师》网络大电影',
+        sn: '1007334',
+        amount: '10000.00',
+        management: '2500.00',
+        youhui: '200'
+      }
+    }
+  })
+</script>
+</body>
+</html>

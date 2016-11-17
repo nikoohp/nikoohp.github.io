@@ -1,0 +1,100 @@
+// 登录
+.h-login{
+  padding: 50px 82px;
+  form{
+    color: #b2b9bf;
+    font-size: 30px;
+    input:not([type=checkbox]){
+      width: 100%;
+      height: 84px;
+      border: 1px solid #b2b9bf;/*no*/
+      font-size: 33px;
+      color: #b2b9bf;
+      text-indent: 35px;
+      margin-bottom: 45px;
+      border-radius: 8px;
+    }
+    .forgot{
+      float: right;
+    }
+  }
+  .h-sure-button{
+    font-size: 38px;
+    &.register{
+    background-color: #fff;
+    border-color: #cdd2d6;
+    color: #cdd2d6;
+  }
+  }
+}
+
+
+// 注册
+.h-register{
+  padding-top: 40px;
+  li{
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    .cols1{
+      float: left;
+      width: 244px;
+      text-align: right;
+      font-size: 33px;
+      color: #606d75;
+      .required{
+        display: inline-block;
+        line-height: 60px;
+        color: #e60012;
+        margin-right: 10px;
+      }
+    }
+    .cols2{
+      position: relative;
+      float: right;
+      width: 487px;
+      color: #b2b9bf;
+      font-size: 30px;
+      input{
+        width: 427px;
+        height: 60px;
+        line-height: 60px;
+        text-indent: 14px;
+        border: 1px solid #b2b9bf;/*no*/
+      }
+      .verify{
+        position: absolute;
+        right: 70px;
+        color: #f19149;
+        font-size: 28px;
+        &.sending{
+          color: #bdbdbd;
+        }
+      }
+      // 图片验证码
+      img.verify{
+        height: 40px;
+        top: 50%;
+        margin-top: -20px;
+      }
+    }
+    &:last-child{
+      font-size: 27px;
+      text-align: center;
+      input{
+        opacity: 0;
+        &:checked + .icon{
+          color: #009ff0;
+        }
+      }
+      .icon{
+        color: #b2b9bf;
+        transition: .1s;
+      }
+      a{
+        color: #009ff0;
+      }
+    }
+  }
+}

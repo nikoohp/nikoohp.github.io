@@ -1,0 +1,174 @@
+header {
+  background-color: #3e85ff;
+  color: #fff;
+}
+
+.h-messages-list .item {
+  padding: 0 0.413333rem 0.453333rem;
+  background-color: #fff;
+  margin-bottom: 1px;
+}
+
+.h-messages-list .item .head {
+  padding: 0.32rem 0;
+  overflow: hidden;
+}
+
+.h-messages-list .item .head img {
+  width: 1.466667rem;
+  height: 1.466667rem;
+  margin-right: 0.586667rem;
+  border-radius: 50%;
+}
+
+.h-messages-list .item .head img,
+.h-messages-list .item .head h2 {
+  float: left;
+}
+
+.h-messages-list .item .head h2,
+.h-messages-list .item .head span {
+  height: 100%;
+  line-height: 1.466667rem;
+}
+
+.h-messages-list .item .head h2 {
+  font-size: 0.453333rem;
+  color: #616a73;
+}
+
+.h-messages-list .item .head span {
+  float: right;
+  font-size: 0.4rem;
+  color: #b2b9bf;
+}
+
+.h-messages-list .item p {
+  height: 0.666667rem;
+  line-height: 0.666667rem;
+  font-size: 0.453333rem;
+  color: #616a73;
+  text-indent: 0.24rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#reply {
+  padding-bottom: 1.44rem;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#reply .reply-box {
+  margin: 0.48rem 0.48rem 0.666667rem 0.48rem;
+  overflow: hidden;
+}
+
+#reply .reply-box .content {
+  position: relative;
+  font-size: 0.4rem;
+  line-height: 0.533333rem;
+  padding: 0.453333rem 0.506667rem;
+  background-color: #7ecef4;
+  border: 1px solid #d7dde3;
+  border-radius: 0.186667rem;
+}
+
+#reply .reply-box .content::before,
+#reply .reply-box .content::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: none;
+}
+
+#reply .reply-box .content::before {
+  right: 0.266667rem;
+  bottom: -0.266667rem;
+  border-top: 0.266667rem solid #d7dde3;
+  border-left: 0.266667rem solid transparent;
+  border-right: 0.266667rem solid transparent;
+}
+
+#reply .reply-box .content::after {
+  right: 0.266667rem;
+  bottom: -0.24rem;
+  border-top: 0.266667rem solid #7ecef4;
+  border-left: 0.266667rem solid transparent;
+  border-right: 0.266667rem solid transparent;
+}
+
+#reply .reply-box .avatar {
+  float: right;
+  width: 0.906667rem;
+  height: 0.906667rem;
+  margin-top: 0.4rem;
+  margin-right: 0.133333rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#reply .reply-box .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#reply .reply-box.guest .content {
+  background-color: #fff;
+  border-color: #d7dde3;
+}
+
+#reply .reply-box.guest .content::before {
+  left: 0.4rem;
+  border-top-color: #d7dde3;
+}
+
+#reply .reply-box.guest .content::after {
+  left: 0.4rem;
+  border-top-color: #fff;
+}
+
+#reply .reply-box.guest .avatar {
+  float: left;
+  margin-left: 0.266667rem;
+}
+
+.h-message {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.44rem;
+  padding: 0 0.48rem;
+  background-color: #fff;
+  border-top: 1px solid #d2d9e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h-message span {
+  color: #aeb8c1;
+  font-size: 0.466667rem;
+}
+
+.h-message input {
+  height: 100%;
+  border: none;
+  font-size: 0.466667rem;
+  color: #b2b9bf;
+}
+
+.h-message .send {
+  font-size: 0.56rem;
+  color: #5d6b74;
+}

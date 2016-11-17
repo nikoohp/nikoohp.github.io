@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/l-mycenter.css">
+  <title>我的账户</title>
+</head>
+<body>
+ <!-- header -->
+ <header>
+   <a href="javascript:history.go(-1)" class='back'>
+     <i class='icon icon-back'></i>
+   </a>
+   <h1>大股东</h1>
+   <a href="###" class='menu'>
+     <i class='icon icon-menu'></i>
+   </a>
+ </header>
+      <section class="l-withdrawal">
+        <div class="l-bank-card">
+          <div class="l-bank-top">
+            <span class="l-bank-log"></span>
+            <h2 class="l-bank-t">招商银行</h2>
+          </div>
+          <div class="l-bank-code">
+            <span class="l-code-xin">****</span>
+            <span class="l-code-xin">****</span>
+            <span class="l-code-xin">****</span>
+            <span class="l-code-end">0728</span>
+          </div>
+          <a href="#" class="l-bank-del">删除</a>
+          <span class="l-icon l-bank-yl"></span>
+        </div>
+        <div class="l-Amount">
+          <div class="l-Amount-item">可提现余额（元）</div>
+          <div class="l-Amount-item">30000.12</div>
+        </div>
+        <ul class="l-Amount-info">
+          <li>
+            <span class="l-info-t">姓名</span>
+            <input class="l-info-v" disabled value="陈**"></input>
+          </li>
+          <li>
+            <span class="l-info-t">身份证号</span>
+            <input class="l-info-v" disabled value="400***********1212"></input>
+          </li>
+          <li>
+            <span class="l-info-t">提现金额</span>
+            <input class="l-info-v" placeholder="输入您要充值的金额（元）"></input>
+          </li>
+        </ul>
+        <a href="#" class="quite-btn">确认并提现</a>
+        <dl class="l-Amount-tips">
+          <dt>温馨提示：</dt>
+          <dd>1、周一到周五提现受理时间为09:00-17:00，周日提现申请顺延至周一受理；</dd>
+          <dd>2、一般情况下招、交、农、建、工行等银行提现处理后24小时内到帐，其它银行1-2个工作日到账（节假日除外）。</dd>
+          <dd>3、提现银行卡的开户名须与实名认证的真实姓名一致，且银行卡信息填写正确方可提现成功。
+          4、信用卡不得设为提现银行卡。</dd>
+
+        </dl>
+        <div class="l-Amount-tel">
+          客服电话：0755-82557958
+        </div>
+
+
+
+      </section>
+      <div class="l-Amount-pop">
+        <div class="l-Amount-pop-t">
+          <a href="#" class="icon icon-back"></a>
+          <h2>请输入您的交易密码</h2>
+          <a href="#" class="icon"></a>
+        </div>
+        <div class="l-Amount-pop-c">
+          <form>
+          <div class="l-Amount-item">
+            <input class="l-Amount-pwd" type="password"></input>
+          </div>
+          <div class="l-Amount-item">
+            <input type="reset" value="取消"></input>
+            <input type="submit" value="确定"></input>
+          </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="l-mark"></div>
+      <script type="text/javascript">
+        window.onload=function () {
+          var mark = document.querySelector('.l-mark');
+          mark.style.height=document.body.scrollHeight;
+          window.onscroll=function () {
+            if (mark.style.height !== document.body.scrollHeight) {
+              mark.style.height=document.body.scrollHeight +'px';
+            }
+          }
+        }
+      </script>
+    </body>
+</html>
