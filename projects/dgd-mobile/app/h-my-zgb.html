@@ -81,13 +81,17 @@
         </dl>
       </section>
     </main>
+    <!-- 加载进度提示 -->
+    <transition name='fade'>
+      <div class="h-modal-mask" v-if='loading'>
+        <div class="loading">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </transition>
   </div>
-  <!-- 加载进度提示 -->
-  <transition name='fade'>
-  <!-- <div class="h-modal-mask">
-
-  </div> -->
-  </transition>
   <!-- 转入转出按钮 -->
   <footer class="h-my-zgb-button">
     <a href="#">转出</a>
@@ -130,12 +134,14 @@
       el: '#my-zgb',
       data: {
         items: data,
-        limit: 3
+        limit: 3,
+        loading: false
       },
       methods: {
         getMoreData: function () {
-          var moreData = [], oldLimit = this.limit
+          var moreData = [], oldLimit = this.limit, _this = this
           this.limit += 3
+          this.loading = true
 
           ajax({
             "method" : "get",
@@ -143,9 +149,11 @@
             "success" : function(response){
               response = JSON.parse(response)
               moreData = response.data.slice(oldLimit)
-              console.log(response.data)
-              console.log(moreData)
+              _this.loading = false
               data.detail = data.detail.concat(moreData)
+              /*_this.$nextTick(function () {
+                _this.loading = false
+              })*/
             },
             "Error" : function(text){
               console.log(text);
@@ -162,6 +170,7 @@
           "url" : "https://cnodejs.org/api/v1/topics?limit=3",
           "success" : function(response){
             response = JSON.parse(response)
+            this.loading = false
             data.detail = response.data
           },
           "Error" : function(text){
