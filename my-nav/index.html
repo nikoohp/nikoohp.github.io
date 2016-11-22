@@ -33,37 +33,54 @@
 </head>
 <body>
     <div class="wrap">
-    	<dl id='composite'>
-    		<dt>综合</dt>
-    		<dd><a href="http://weibo.com" target="_blank"><img src="http://weibo.com/favicon.ico" alt=""><span>微博</span></a></dd>
-    		<dd><a href="http://zhihu.com" target="_blank"><img src="http://zhihu.com/favicon.ico" alt=""><span>知乎</span></a></dd>
-    		<dd><a href="http://cnblogs.com" target="_blank"><img src="http://cnblogs.com/favicon.ico" alt=""><span>博客园</span></a></dd>
-    		<dd><a href="http://csdn.net" target="_blank"><img src="http://c.csdnimg.cn/public/favicon.ico" alt=""><span>CSDN</span></a></dd>
-    		<dd><a href="http://stackoverflow.com" target="_blank"><img src="http://stackoverflow.com/favicon.ico" alt=""><span>stackoverflow</span></a></dd>
-    		<dd><a href="http://sf.gg" target="_blank"><img src="http://sf.gg/favicon.ico" alt=""><span>SegmentFault</span></a></dd>
-    		<dd><a href="http://toutiao.io" target="_blank"><img src="http://toutiao.io/favicon.ico" alt=""><span>开发者头条</span></a></dd>
-    		<dd><a href="http://gold.xitu.io" target="_blank"><img src="http://gold.xitu.io/favicons/favicon.ico" alt=""><span>掘金</span></a></dd>
-    		<dd><a href="http://www.freenom.com" target="_blank"><img src="http://www.freenom.com/favicon.ico" alt=""><span>免费域名</span></a></dd>
-        <dd><a href="http://www.outlook.com" target="_blank"><img src="http://www.outlook.com/favicon.ico" alt=""><span>outlook邮箱</span></a></dd>
+    	<dl v-for='(item, index) in items'>
+    		<dt>{{typeMape[index]}}</dt>
+    		<dd v-for='v in item'>
+                <a :href="v.url" target="_blank">
+                    <img :src="v.ico" alt="">
+                    <span>{{v.name}}</span>
+                </a>
+            </dd>
     	</dl>
-    	<dl id='tools'>
-    		<dt>工具</dt>
-    		<dd><a href="http://github.com" target="_blank"><img src="https://assets-cdn.github.com/favicon.ico" alt=""><span>Github</span></a></dd>
-    		<dd><a href="http://nec.netease.com" target="_blank"><img src="http://nec.netease.com/img/favicon.ico" alt=""><span>NEC</span></a></dd>
-            <dd><a href="http://caniuse.com" target="_blank"><img src="http://caniuse.com/favicon.ico" alt=""><span>Can-I-Use</span></a></dd>
-            <dd><a href="http://www.jstips.co/zh_CN/" target="_blank"><img src="http://www.jstips.co/favicon.ico" alt=""><span> JS Tips</span></a></dd>
-    		<dd><a href="http://fast.com" target="_blank"><img src="https://fast.com/assets/favicons/favicon.ico" alt=""><span>FAST测速</span></a></dd>
-    	</dl>
-    	<dl id='search'>
-    		<dt>搜索</dt>
-    		<dd><a href="http://bing.com" target="_blank"><img src="http://cn.bing.com/favicon.ico" alt=""><span>Bing</span></a></dd>
-    		<dd><a href="http://google.com" target="_blank"><img src="https://www.google.com/favicon.ico" alt=""><span>Google</span></a></dd>
-    	</dl>
-        <dl id='sports'>
-            <dt>体育</dt>
-            <dd><a href="http://sports.qq.com/nba" target="_blank"><img src="http://qq.com/favicon.ico" alt=""><span>NBA</span></a></dd>
-        </dl>
-    </div>
 
+    </div>
+<script src="http://cdn.bootcss.com/vue/2.0.7/vue.min.js"></script>
+<script>
+    var datas = {
+        'composite': [
+            {name: '微博', url: 'http://weibo.com', ico: 'http://weibo.com/favicon.ico'},
+            {name: '稀土掘金', url: 'http://gold.xitu.io', ico: 'http://gold.xitu.io/favicons/favicon.ico'},
+            {name: 'SegmentFault', url: 'http://sf.gg', ico: 'http://sf.gg/favicon.ico'},
+            {name: '博客园', url: 'http://csdn.net', ico: 'http://cnblogs.com/favicon.ico'},
+            {name: 'CSDN', url: 'http://caniuse.com', ico: 'http://c.csdnimg.cn/public/favicon.ico'},
+            {name: 'stackoverflow', url: 'http://stackoverflow.com', ico: 'http://stackoverflow.com/favicon.ico'},
+            {name: '免费域名', url: 'http://www.freenom.com', ico: 'http://www.freenom.com/favicon.ico'},
+            {name: 'outlook邮箱', url: 'http://www.outlook.com', ico: 'http://www.outlook.com/favicon.ico'},
+        ],
+        'tools': [
+            {name: 'Github', url: 'http://github.com', ico: 'https://assets-cdn.github.com/favicon.ico'},
+            {name: 'NEC', url: 'http://nec.netease.com', ico: 'http://nec.netease.com/img/favicon.ico'},
+            {name: 'Can-I-Use', url: 'http://caniuse.com', ico: 'http://caniuse.com/favicon.ico'},
+            {name: 'JS Tips', url: 'http://www.jstips.co/zh_CN/', ico: 'http://www.jstips.co/favicon.ico'},
+            {name: 'BootCDN', url: 'http://www.bootcdn.cn/', ico: 'http://www.bootcdn.cn/assets/ico/favicon.ico'},
+        ],
+        'search': [
+            {name: 'Bing', url: 'http://bing.com', ico: 'http://cn.bing.com/favicon.ico'},
+            {name: 'Google', url: 'http://google.com', ico: 'https://www.google.com/favicon.ico'}
+        ],
+        'sports': [
+            {name: 'NBA', url: 'http://sports.qq.com/nba', ico: 'http://qq.com/favicon.ico'}
+        ]
+    }
+
+    new Vue({
+        el: '.wrap',
+        data : {
+            items: datas,
+            typeMape: {'composite': '综合', 'tools': '工具', 'search': '搜索', 'sports': '体育'}
+        }
+    })
+
+</script>
 </body>
 </html>
