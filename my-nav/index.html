@@ -29,11 +29,14 @@
 		dd a:hover{background-color: #f5f5f5;}
 		dd img, dd span{float: left;}
 		dd img{margin-right: 6px;width: 16px;height: 16px;}
+        [v-cloak]{
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="wrap">
-    	<dl v-for='(item, index) in items'>
+    	<dl v-for='(item, index) in items' v-cloak>
     		<dt>{{typeMape[index]}}</dt>
     		<dd v-for='v in item'>
                 <a :href="v.url" target="_blank">
