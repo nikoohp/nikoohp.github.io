@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="/skin/plugs/normalize-css/normalize.css"/>
+    <link rel="stylesheet" href="/skin/css/base.css"/>
+    <link rel="stylesheet" href="/skin/css/dialog.css"/>
+    <script src="http://www.zczj.com/skin/js/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/vue/2.0.5/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+    <script src="/skin/plugs/dialog/js/dialog.js"></script>
+    <script src="/skin/js/util.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="container clearfix">
+        <div v-bind:class="{navLogin: isLogin}" class="nav clearfix"><a href="/" class="logo"><img src="/skin/img/logo.png" alt=""/></a>
+          <div class="triggers"><a href="#" v-on:click="showMean" class="mean-btn"><i class="icon icon-catgray"></i></a></div>
+          <nav v-bind:class="{ navShow: tag }" v-cloak=""><a v-for="(item, index) in navs" :href="item.url" v-bind:class="{ cur : index == 0 }" class="border-1px">{{item.title}}</a><a href="javascript:void(0);" v-if="isLogin" v-on:click="loginOut()" class="mobile-show border-1px">退出</a></nav>
+          <div class="login-btns">
+            <ul class="tool-nav">
+              <li v-if="!isLogin" class="login-btn">
+                <div class="item"><a v-bind:href="['/passport/login.html?url='+window.location.href]">登录</a><span class="line">|</span><a href="/passport/register.html">注册</a></div>
+              </li>
+              <li v-else="" class="login-btn">
+                <div class="item avatar"><a href="/mycenter/index"><img :src="userInfo.Avatar" alt=""/></a>
+                  <div class="user-pop pop-up"><a href="/" :title="userInfo.Avatar" class="userinfo clearfix"><img :src="userInfo.Avatar" alt=""/><span>{{userInfo.UserName}}</span></a>
+                    <div class="menu"><a href="#">我的帐户</a><a href="#">我的交易</a><a href="#">我的质押</a><a href="#">我的优惠券</a><a href="#">安全中心</a><a href="javascript:void(0);" v-if="isLogin" v-on:click="loginOut()">退出</a></div>
+                  </div>
+                </div>
+              </li>
+              <li class="go-zczj"><a href="http://m.dgd.vc/" class="item">前往之家</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div v-bind:class="{'mask-show': tag}" v-on:click="closeMean" class="mask"></div>
+      <input id="userId" type="hidden"/>
+      <script src="/skin/js/header.js"></script>
+    </header>
+    <!--==================================================-->
+    <link rel="stylesheet" href="/skin/plugs/owl/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="/skin/plugs/owl-carousel/assets/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="/skin/css/index.css"/>
+    <div id="model-index">
+      <div class="dgd-ad">
+        <div id="dgd-ad" class="owl-carousel owl-theme">
+          <div v-for="item in Ad.ChannelList" v-cloak="" class="item"><a :href="item.Link"><img v-bind:src="item.Pic" alt="" v-cloak=""/></a></div>
+        </div>
+      </div>
+      <section class="dgd-num border-1px"><span class="item"><span class="item-r"><span class="num">234,600</span><span class="title">总注册人数</span></span></span><span class="item"><span class="item-r"><span class="num">234</span><span class="title">总项目数</span></span></span><span class="item"><span class="item-r"><span class="num">234,60</span><span class="title">总融资金额（万元）</span></span></span></section>
+      <section class="dgd-ga">
+        <div class="container clearfix">
+          <div class="ga-side">
+            <div class="dgd-plat-gg">
+              <div class="title"><span>平台公告</span><a href="#" class="more">更多公告 >></a></div>
+              <div id="ggSlider" v-bind:class="{isMobile: headerModel.isMobileOrTable}" class="content">
+                <ul>
+                  <li v-for="item in Ad.NoticeList" class="clearfix"><span class="time">{{item.PostDate}}</span><a v-bind:href="item.URL" class="title ellipsis">{{item.Title}}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="ga-main ga-tab">
+            <div class="ga-tab-btns clearfix"><a href="javascript:void(0);" class="ga-tab-btn cur">众筹</a><a href="javascript:void(0);" class="ga-tab-btn">政策</a><a href="javascript:void(0);" class="ga-tab-btn">国际</a><a href="javascript:void(0);" class="ga-tab-btn">研究</a><a href="javascript:void(0);" class="ga-tab-btn">创投</a><a href="#" class="more">更多资讯 >></a></div>
+            <div class="ga-tab-box">
+              <ul>
+                <li class="first clearfix"><a href="#" class="pic"><img src="../skin/img/project/list-img01.jpg" alt=""/></a><a href="#" class="title ellipsis">十张图看清BAT之间的实力对比</a>
+                  <p class="txt">
+                    近日，百度、阿里、腾讯都相继发布了三季度财报，作为中国互
+                    联网的三大巨头，三者的营收体量、利润和业务结构各有什么区
+                    别？我们从这两年三者的季度财报中看看。
+                  </p>
+                </li>
+                <li><span class="time">25分钟前</span><a href="#" class="title ellipsis">特朗普：上任第一天就将发布命令退出TPP上任第一天就将发布命令退出TPP上任第一天就将发布命令退出TPP上任第一天就将发布命令退出TPP</a></li>
+                <li><span class="time">10分钟前</span><a href="#" class="title ellipsis">支付机构泄露千万银行卡信息 用户损失3900多万</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="stand-bao">
+        <div class="container">
+          <div class="common-t"><span>站岗宝</span></div>
+          <ul class="common-list">
+            <li class="list-item">
+              <div class="list-pic"><a href="#"><img src="../skin/img/project/list-img01.jpg" alt=""/></a>
+              </div>
+              <div class="list-main">
+                <div class="list-t border-1px">
+                  <div class="list-st">{{Ad.StandGuard.Title}}</div><a href="#" class="buy-now"><i class="icon icon-money"></i>我要认购</a>
+                </div>
+                <div class="list-con">
+                  <div class="list-info list-info-st">"站岗宝 复合年化利率高达8%"
+                    <p class="item"><span>{{Ad.StandGuard.DailyIncome}}</span></p>
+                    <p class="item"><span>{{Ad.StandGuard.Summary}}</span></p>
+                    <p class="item price"><span>可购余额：</span><span>{{Ad.StandGuard.Amount}}</span></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="stand-bao">
+        <div class="container">
+          <div class="common-t"><span>融资的项目</span></div>
+          <ul class="common-list">
+            <li v-for="(item, index) in Ad.projectList" class="list-item">
+              <div class="list-pic"><a v-bind:href="['/project/detail.html?id='+ item.ProjectID]"><img v-if="item.BigPic==null" src="/skin/img/default.jpg" alt=""/><img v-else="item.BigPic!=null" v-bind:src="item.BigPic"/><span v-bind:class="[&quot;tag-&quot;+item.State]" class="tag"></span></a></div>
+              <div class="list-main">
+                <div class="list-t">
+                  <div class="item"><span>起投金额：</span><span class="price">{{item.LowVote}}</span></div>
+                  <div class="item"><span>项目平台：</span><span class="price">智金汇</span></div><a :href="['/buy/'+ item.ProjectID]" class="buy-now"><i class="icon icon-money"></i>我要认购</a><a href="javascript:void(0);" v-on:click="gz(item.ProjectID,index)" v-bind:class="{ 'gz-btn-ed': item.FollowState== true }" class="gz-btn"></a>
+                </div>
+                <div class="list-con">
+                  <div v-show="item.ShortDesc" class="list-txt">{{item.ShortDesc}}</div>
+                  <div class="list-point"><span class="item"><span class="t">目标金额：</span><span class="val">{{item.TargetAmount}}</span></span><span class="item"><span class="t">已达金额：</span><span class="val">{{item.CurrentAmount}}</span></span><span class="item"><span class="t">众筹轮次：</span><span class="val">{{TimesRotationMap[parseInt(item.TimesRotation)-1]}}</span></span></div>
+                  <div class="list-progress clearfix"><span class="t">项目进度：</span><span class="val"><span v-bind:style="{width: (100 - item.Progress) &lt; 0 ? &quot;0&quot; : (100 - item.Progress).toFixed(2)+&quot;%&quot;}" class="val-sub"></span></span><span class="num">{{parseInt(item.Progress)}}%</span></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="loading-more"><a href="/project">查看更多融资项目</a></div>
+        </div>
+      </section>
+      <section class="transfer">
+        <div class="container">
+          <div class="common-t"><span>转让的项目</span></div>
+          <div id="transfer-list" class="transfer-list">
+            <ul class="clearfix">
+              <li style="background-image:url(http://pic01.zczj.com//counseling/20161212/20161212101626.jpg@1e_1c_0o_0l_136h_220w_90q.src)" class="item cur">
+                <div class="face"><span class="tag"></span>
+                  <div class="logo"><img src="http://www.dgd.vc/skin/promotion/fhReport/img/l2.png" alt=""/></div>
+                  <h2 class="title">乐商宝2号2期</h2><a href="#" class="btn">点击查看</a>
+                </div>
+                <div class="back">
+                  <div class="title">此项目折价出售</div>
+                  <p class="item">还剩 X 天 X 小时 X 秒</p>
+                  <p class="item">转让金额：4万元</p>
+                  <p class="item">转让份额：2份</p><a href="#" class="btn">查看关联项目</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="loading-more"><a href="javascript:void(0);">查看更多转让项目</a></div>
+        </div>
+      </section>
+      <section class="odds">
+        <div class="container">
+          <div class="common-t"><span>我们的优势</span></div>
+          <div class="odds-list">
+            <ul class="clearfix">
+              <li><span class="pro-logo"></span>
+                <div class="title border-1px">优先项目</div>
+                <div class="txt">
+                  <p>为您精选优质项目</p>
+                  <p>保障资金不站岗</p>
+                </div>
+              </li>
+              <li><span class="pro-logo"></span>
+                <div class="title border-1px">质押贷款</div>
+                <div class="txt">
+                  <p>资金周转轻松搞定</p>
+                  <p>投资理财更灵活</p>
+                </div>
+              </li>
+              <li><span class="pro-logo"></span>
+                <div class="title border-1px">股权转让</div>
+                <div class="txt">
+                  <p>解决优质资产变现</p>
+                  <p>提高资金流动性</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="player">
+        <div class="container">
+          <div class="common-t"><span>合作机构</span></div>
+          <div class="player-con clearfix">
+            <div class="player-bar"><span class="prev-btn"></span><span class="next-btn"></span></div>
+            <div id="player-list" class="player-list owl-carousel owl-theme">
+              <div class="item"><img src="/skin/img/index/p1.jpg" alt=""/></div>
+              <div class="item"><img src="/skin/img/index/p1.jpg" alt=""/></div>
+              <div class="item"><img src="/skin/img/index/p1.jpg" alt=""/></div>
+              <div class="item"><img src="/skin/img/index/p1.jpg" alt=""/></div>
+              <div class="item"><img src="/skin/img/index/p1.jpg" alt=""/></div>
+              <div class="item"><img src="/skin/img/index/p1.jpg" alt=""/></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="links">
+        <div class="container">
+          <div class="common-t"><span>友情链接</span></div>
+          <div class="links-list"><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a><a href="#">红岭创投</a></div>
+        </div>
+      </section>
+    </div>
+    <script src="/skin/plugs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/skin/js/index.js"></script>
+    <!--==================================================-->
+    <div class="footer">
+      <div class="info">
+        <div class="container clearfix">
+          <dl>
+            <dt>关于大股东</dt>
+            <dd>关于我们</dd>
+            <dd>平台公告</dd>
+            <dd>联系我们</dd>
+            <dd>招贤纳士</dd>
+          </dl>
+          <dl>
+            <dt>帮助中心</dt>
+            <dd>注册登录</dd>
+            <dd>转让质押</dd>
+            <dd>资费标准</dd>
+            <dd>投资</dd>
+          </dl>
+          <dl>
+            <dt>资讯与活动</dt>
+            <dd>站内资讯</dd>
+            <dd>行业快讯</dd>
+            <dd>众筹之家</dd>
+            <dd>平台活动</dd>
+          </dl>
+          <dl>
+            <dt>联系我们</dt>
+            <dd><img src="http://www.dgd.vc/skin/img/ewm.png" alt="大股东"/>
+              <p>联系地址：深圳市南山区科技园中区讯美科技广场3栋14层A03</p>
+              <p>联系人：股东妹</p>
+              <p>联系电话：0755-82557958</p>
+              <p>投资Q群：306742456</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="container"><span>深圳市网筹互联网金融服务有限公司</span><span>ICP证：粤ICP备14040204号-2</span></div>
+      </div>
+    </div>
+    <div id="loader" class="loader">
+      <loader-inner class="ball-clip-rotate-pulse">
+        <div></div>
+        <div></div>
+      </loader-inner>
+    </div>
+  </body>
+</html>
