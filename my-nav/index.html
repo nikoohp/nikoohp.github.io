@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ch-CN">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,17 +17,17 @@
 			margin: 0;
 			padding: 0;
 		}
-		
+
 		body {
 			font-family: '微软雅黑';
 			font-size: 14px;
 		}
-		
+
 		a {
 			text-decoration: none;
 			color: #666;
 		}
-		
+
 		.wrap {
 			width: 900px;
 			border: 1px solid #e9e9e9;
@@ -36,25 +37,25 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 		}
-		
+
 		dl {
 			border-bottom: 1px solid #e9e9e9;
 			padding: 0 15px;
 			margin-top: 8px;
 			overflow: hidden;
 		}
-		
+
 		dt {
 			height: 38px;
 			line-height: 38px;
 			border-bottom: 1px solid #e9e9e9;
 		}
-		
+
 		dd {
 			float: left;
 			overflow: hidden;
 		}
-		
+
 		dd a {
 			display: inline-block;
 			border: 1px solid #e9e9e9;
@@ -63,22 +64,22 @@
 			border-radius: 5px;
 			transition: .3s;
 		}
-		
+
 		dd a:hover {
 			background-color: #f5f5f5;
 		}
-		
+
 		dd img,
 		dd span {
 			float: left;
 		}
-		
+
 		dd img {
 			margin-right: 6px;
 			width: 16px;
 			height: 16px;
 		}
-		
+
 		[v-cloak] {
 			display: none;
 		}
@@ -86,6 +87,7 @@
 </head>
 
 <body>
+	<!--nav-->
 	<div class="wrap">
 		<dl v-for='(item, index) in items' v-cloak>
 			<dt>{{typeMape[index]}}</dt>
@@ -98,7 +100,7 @@
 		</dl>
 
 	</div>
-	<script src="//cdn.bootcss.com/vue/2.0.7/vue.min.js"></script>
+	<script src="http://cdn.bootcss.com/vue/2.0.7/vue.min.js"></script>
 	<script>
 		var datas = {
 			'composite': [{
@@ -115,6 +117,11 @@
 					name: 'SegmentFault',
 					url: 'http://sf.gg',
 					ico: 'http://sf.gg/favicon.ico'
+				},
+				{
+					name: 'Talking Coder',
+					url: 'https://www.talkingcoder.com',
+					ico: 'https://o5wx24v1d.qnssl.com/static/image/favicon.ico'
 				},
 				{
 					name: '博客园',
