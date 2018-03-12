@@ -1,16 +1,16 @@
 ## 贺鹏 - 个人简历 - WEB前端开发
 ## 个人信息
- - 贺鹏/男/1989
- - 本科/湖南文理学院电子信息科学与技术
+ - 贺鹏/男/1989 
+ - 本科/湖南文理学院电子信息科学与技术 
  - 工作年限：5年
  - 期望职位：WEB前端开发
  - 期望薪资：税前月薪13k~15k
  - 期望城市：深圳
 ## 联系方式
 - 手机：18675594174
-- Email：nikoohp@outlook.com
+- Email：nikoohp@outlook.com 
 - QQ/微信号：418529948
-
+  
 ## 工作经历
  **众筹之家 （ 2016年10月 ~ 至今 ）**
 > 主要工作内容为：众筹之家/大股东官网的开发、维护与优化
@@ -20,7 +20,7 @@
 > 与后端开发团队紧密配合,确保代码有效对接,优化网站前端性能
 
 1. 众筹之家官网(`www.zczj.com`)/大股东官网(`www.dgd.vc`)
-> 对官网进行响应式开发，自适应PC端与移动端
+> 整体使用响应式布局
 > 使用`sass`进行样式开发与模块化管理
 > 使用`gulp`进行资源的工程化管理，如`sass`文件的编译与压缩，浏览器前缀的自动添加，`js`文件`ES6`->`ES5`的编译、压缩，图片的`base64`化与压缩
 > 使用`vuejs`进行活动页的快速开发与迭代
@@ -31,14 +31,14 @@
 
 3. 运营报告生成工具
 > 每个月都需要出一份运营报告，样式固定，数据不同。使用`expressjs`开发出对应的模板，利用`expressjs`的`res.rend('tempalte',  data, (err, html) => {})`和`nodejs`的`fs`模块生成页面
-
+  
  **常德市易网科技公司 （ 2014年10月 ~ 2016年9月 ）**
 > 主要工作内容是：`dedecms`企业站模板的开发与修改， 还原`UI`设计的效果图
 > 使用`scss`进行样式的开发与模块化管理
 > 使用`jQuery`进行交互效果的开发
-
+    
 ## 技能清单
-- Web前端：html5/css3/es6/node
-- 前端框架：bootstrap/vuejs/jQuery/小程序(wepy)
-- 前端工具：gulp/webpack/sass/less/eslint/babel
-- 版本管理：svn/git
+- Web前端：`html5/css3/es6/node`
+- 前端框架：`bootstrap/vuejs/jQuery/小程序(wepy)`
+- 前端工具：`gulp/webpack/sass/less/eslint/babel`
+- 版本管理：`svn/git`
