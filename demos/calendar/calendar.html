@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>calendar</title>
+  <style>
+    body{
+      background-color: #ccc;
+    }
+    .date-wrapper{
+      width: 350px;
+      margin: auto;
+    }
+    .date-header{
+      line-height: 30px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .date-header input{
+      flex: 1;
+    }
+    .date-header a{
+      display: inline-block;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    .date-box{
+      width: 100%;
+    }
+    .date-weeks span,
+    .date-box span{
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+    .date-weeks{
+      font-size: 0;
+      color: #7bb4ac;
+      background-color: #fff;
+    }
+    .date-weeks .weeks{
+      font-size: 15px;
+    }
+    .date-box span{
+      cursor: pointer;
+      transition: .2s;
+    }
+    .date-box span:hover{
+      color: #ffffff;
+      background-color: #a6cac5;
+    }
+    .date-box .unshow{
+      color: #9ca1a8;
+      background-color : #e9e5e2;
+    }
+    .date-box .show{
+      color : #7bb4ac;
+      background-color : #f6f6f6;
+    }
+    .date-box .select{
+      background-color : #7bb4ac;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="date-wrapper">
+    <div class="date-header">
+      <a href="javascript:;" data-sort='0'> < </a>
+      <input type="text" readonly>
+      <a href="javascript:;" data-sort="1"> > </a>
+    </div>
+    <div class="date-weeks">
+      <span class="weeks">日</span>
+      <span class="weeks">一</span>
+      <span class="weeks">二</span>
+      <span class="weeks">三</span>
+      <span class="weeks">四</span>
+      <span class="weeks">五</span>
+      <span class="weeks">六</span>
+    </div>
+    <div class="date-box">
+
+    </div>
+  </div>
+
+  <script src="./rCalendar.js"></script>
+  <script>
+    new rCalendar()
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>无缝滚动</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 1200px;
+      margin: 50px auto;
+      font-size: 0;
+    }
+
+    .item {
+      font-size: 24px;
+      display: inline-block;
+      width: 50%;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    .marquee {
+      width: 100%;
+      height: 140px;
+      line-height: 140px;
+    }
+
+    .marquee div:not(.J_marquee) {
+      float: left;
+      width: 240px;
+      height: 100%;
+      border: 2px dashed #abc;
+    }
+
+    .marquee2 div:not(.J_marquee) {
+      border: 2px dashed #abc;
+      height: 60px;
+      line-height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="item">
+      <div id="marquee-1" class='marquee'>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div id="marquee-2" class='marquee'>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div id="marquee-3" class='marquee2'>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div id="marquee-4" class='marquee2'>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./marquee.js"></script>
+  <script>
+    var m1 = new Marquee({
+      selector: '#marquee-1',
+      speed: '10'
+    });
+    var m2 = new Marquee({
+      selector: '#marquee-2',
+      dir: 'right'
+    })
+    var m3 = new Marquee({
+      selector: '#marquee-3',
+      dir: 'top'
+    })
+    var m4 = new Marquee({
+      selector: '#marquee-4',
+      speed: 5,
+      dir: 'bottom'
+    })
+
+    document.addEventListener('click', function () {
+      m4.pause = true;
+    }, false)
+  </script>
+</body>
+
+</html>
