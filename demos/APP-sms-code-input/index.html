@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>APP短信验证码模拟</title>
+  <style>
+    .wrapper{
+      margin-top: 100px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    input{
+      position: absolute;
+      left: -99999999px;
+      top: -99999999px;
+      opacity: 0;
+    }
+    label{
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin: 0 5px;
+      border-bottom: 1px solid #ccc;
+    }
+    label.cur::before{
+      content: " ";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1px;
+      height: 60%;
+      background-color: #000;
+      transform: translateY(-50%);
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0% {
+        opacity: 0
+      }
+      25% {
+        opacity: 0
+      }
+      50% {
+        opacity: 1
+      }
+      75% {
+        opacity: 1
+      }
+      to {
+        opacity: 0
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <input type="tel" id='yzm' maxlength='4'>
+    <label class="" for="yzm"></label>
+    <label for="yzm"></label>
+    <label for="yzm"></label>
+    <label for="yzm"></label>
+  </div>
+
+  <script>
+    const input = document.getElementById('yzm')
+    const labels = document.querySelectorAll('label')
+
+    // 获取焦点事件
+    function handleFocus() {
+      const code = input.value
+      // 获取焦点时，判断输入长度，设置光标
+      if (code.length < labels.length) {
+        labels[code.length].classList.add('cur')
+      }
+    }
+
+    // 失去焦点事件
+    function handleBlur() {
+      const code = input.value
+      // 失去焦点时，去除所有光标
+      for (let i = 0; i < labels.length; i++) {
+        labels[i].classList.remove('cur')
+      }
+      // 失去焦点时，判断是否输入完成
+      if (code.length < labels.length) return
+      setTimeout(() => {
+        alert(`code: ${input.value}`)
+      }, 500);
+    }
+
+    // 键盘按键事件
+    function handleKeyup() {
+      let value = input.value
+      let arr = value.split('')
+      // 将输入框的数字填充到label标签中
+      for (let i = 0; i < labels.length; i++) {
+        labels[i].innerText = arr[i] || ''
+        labels[i].classList.remove('cur')
+      }
+      // 在下一个label标签中显示光标
+      if (arr.length < labels.length) {
+        labels[arr.length].classList.add('cur')
+      } else {
+        input.blur()
+      }
+    }
+
+    // 事件绑定
+    input.addEventListener('focus', handleFocus)
+    input.addEventListener('keyup', handleKeyup)
+    input.addEventListener('blur', handleBlur)
+  </script>
+</body>
+</html>

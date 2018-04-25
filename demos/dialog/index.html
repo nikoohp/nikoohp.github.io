@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dialog弹窗组件</title>
+  <style>
+  @font-face {
+    font-family: 'iconfont';  /* project id 591247 */
+    src: url('http://at.alicdn.com/t/font_591247_r9s8uttw2jbmaemi.eot');
+    src: url('http://at.alicdn.com/t/font_591247_r9s8uttw2jbmaemi.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_591247_r9s8uttw2jbmaemi.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_591247_r9s8uttw2jbmaemi.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_591247_r9s8uttw2jbmaemi.svg#iconfont') format('svg');
+  }
+  .dgd-icon{
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .icon-success::before{
+    content: '\e614';
+  }
+  .icon-warning::before{
+    content: '\e601';
+  }
+  .icon-close::before{
+    content: '\e643';
+  }
+  .dialog--modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dialog--wrapper {
+    position: relative;
+    width: 450px;
+    padding: 30px 26px;
+    color: #8390a3;
+    text-align: center;
+    font-size: 14px;
+    background-color: #fff;
+    transition: all 0.1s cubic-bezier(0.43, 0.14, 0.34, 1.6);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  .dialog--wrapper.dialog--show{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  @media screen and (max-width: 576px) {
+    .dialog--wrapper{
+      width: 100%;
+      padding: 15px;
+    }
+  }
+  .dialog--close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .dialog--status .dgd-icon{
+    font-size: 36px;
+  }
+  .dialog--status .icon-success{
+    color: #09bb07;
+  }
+  .dialog--status .icon-warning{
+    color: #fbc550;
+  }
+  .dialog--content{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  .dialog--separate{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dialog--separate::before,
+  .dialog--separate::after{
+    content: ' ';
+    display: inline-block;
+    height: 1px;
+    flex: 1;
+    background-color: #e6eaef;
+    margin: 0 6px;
+  }
+  .dialog--buttons{
+    margin-top: 28px;
+  }
+  .dialog--button{
+    border: none;
+    outline: none;
+    width: 126px;
+    margin: 0 8px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .dialog--button.button--bg{
+    color: #ffffff;
+    background-color: #e0aa54;
+  }
+  .dialog--button.button--no-bg{
+    color: inherit;
+    border: 1px solid #eaeaea;
+    background-color: transparent;
+  }
+  </style>
+</head>
+<body>
+  <button>button</button>
+
+  <script src="./rDialog.js"></script>
+  <script>
+
+    const str = `
+
+    `
+
+
+    document.querySelector('button').onclick = function() {
+
+      new RDialog({
+        type: 'warning',
+        content: '账户余额不足 <a href="#">去充值</a>',
+        delay: 2,
+        sep: {
+          // time: 6,
+          url: 'http://www.dgd.vc',
+          text: '您还可以选择以下支付方式'
+        },
+        buttons: [{
+          text: '在线支付',
+          hasBg: true,
+          cb() {
+            // alert('继续投资')
+          }
+        },
+        // {
+        //   text: '确定',
+        //   hasBg: false,
+        //   cb() {
+        //     alert('点击了确定按钮')
+        //   }
+        // }
+      ]
+      })
+    }
+  </script>
+</body>
+</html>

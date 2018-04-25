@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义音乐播放器</title>
+  <style>
+    @font-face {
+      font-family: 'iconfont';  /* project id 591247 */
+      src: url('http://at.alicdn.com/t/font_591247_qs7wu71dgd37hkt9.eot');
+      src: url('http://at.alicdn.com/t/font_591247_qs7wu71dgd37hkt9.eot?#iefix') format('embedded-opentype'),
+      url('http://at.alicdn.com/t/font_591247_qs7wu71dgd37hkt9.woff') format('woff'),
+      url('http://at.alicdn.com/t/font_591247_qs7wu71dgd37hkt9.ttf') format('truetype'),
+      url('http://at.alicdn.com/t/font_591247_qs7wu71dgd37hkt9.svg#iconfont') format('svg');
+    }
+    .dgd-icon{
+      font-family: "iconfont" !important;
+      font-size: 16px;
+      font-style: normal;
+      display: inline-block;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .icon-play::before{
+      content: '\e74c';
+    }
+    .icon-pause::before{
+      content: '\e7a9';
+    }
+    .icon-sound::before{
+      content: '\e630';
+    }
+    #audio, #audio1{
+      width: 400px;
+      margin:40px auto;
+    }
+    .custom__audio{
+      width: 100%;
+      font-size: 14px;
+      padding: 5px 10px;
+      box-shadow: 0px 0px 0px 4px #cdcece;
+      background-color: #e7e7e7;
+    }
+    .custom__audio__progress{
+      position: relative;
+      width: 100%;
+      height: 4px;
+      margin: 12px 0;
+      background-color: #b5b5b5;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .custom__audio__progress__bar{
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #e0aa54;
+      cursor: pointer;
+    }
+    .custom__audio__progress__bar::after{
+      content: ' ';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 4px;
+      height: 4px;
+      background-color: #e0aa54;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 0 5px #fff, 0 0 0 6px #dfdfdf;
+    }
+    .custom__audio__control {
+      display: flex;
+      align-items: center;
+    }
+    .custom__audio__control .dgd-icon{
+      margin-right: 8px;
+    }
+    .custom__audio__play .dgd-icon{
+      color: #e0aa54;
+      cursor: pointer;
+    }
+    .custom__audio__play .custom__audio__time {
+      font-size: 12px;
+    }
+    .custom__audio__volume{
+      width: 100px;
+      color: #999999;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .custom__audio__volume [data-audio='mute'] {
+      cursor: pointer;
+    }
+    .custom__audio__volume .custom__audio__progress{
+      width: auto;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="audio">
+    <div class="custom__audio">
+      <header data-audio="title" class="custom__audio__header">正在播放：
+        <span>路演音频一</span>
+      </header>
+      <div class="custom__audio__progress">
+        <div data-audio="progress" class="custom__audio__progress__bar"></div>
+      </div>
+      <div class="custom__audio__control">
+        <div class="custom__audio__play">
+          <span data-audio="play" class="dgd-icon icon-play"></span>
+          <span data-audio="time" class="custom__audio__time">00:40</span>
+        </div>
+        <div class="custom__audio__volume">
+          <i data-audio="mute" class="dgd-icon icon-sound"></i>
+          <div class="custom__audio__progress">
+            <div data-audio="volumebar" class="custom__audio__progress__bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./audio.js"></script>
+  <script>
+  var r1 = new RAudio({
+    el: '#audio',
+    url: './2914044483.mp3',
+    volume: 30,
+  })
+
+  console.log(r1)
+  </script>
+</body>
+</html>

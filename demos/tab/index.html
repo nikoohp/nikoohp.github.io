@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tab切换组件</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style: none;
+    }
+    .wrapper{
+      width: 500px;
+      margin: 100px auto;
+    }
+    .active{
+      color: #ff4400;
+    }
+    .tabs{
+      width: 100%;
+      border: 1px solid #ccc;
+      display: flex;
+    }
+    .tabs li{
+      padding: 5px 8px;
+      border-right: 1px solid #ccc;
+    }
+    .tab-content{
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <ul class="tabs">
+      <li data-toggle="tab">tab1</li>
+      <li data-toggle="tab">tab2</li>
+      <li data-toggle="tab">tab3</li>
+    </ul>
+    <div class="tab-content">
+      <div data-toggle="tab">content1</div>
+      <div data-toggle="tab" style="text-align  :  center  ;">content2</div>
+      <div data-toggle="tab">content3</div>
+    </div>
+  </div>
+  <script src="./rTab.js"></script>
+  <script>
+    new Tab({
+      header: '.tabs',
+      content: '.tab-content',
+      className: 'active',
+      event: 'hover',
+      index: 1,
+      cb: function(index) {
+        console.log(`显示的是第${index+1}个内容`)
+      }
+    })
+  </script>
+</body>
+</html>
